@@ -272,50 +272,6 @@ def handle_connect():
 def handle_disconnect():
     print('Client disconnected')
 
-# @socketio.on('new_message')
-# def handle_new_message(data):
-#     print('New message:', data)
-#     socketio.emit('new_message', data, broadcast=True)
-
-
-# @socketio.on('new_message')
-# def handle_new_message(data):
-#     print('New message:', data)
-
-#     # Save the new message to the database
-#     new_message = Message(
-#         message_content=data['message_content'],
-#         chatroom_id=data['chatroom_id'],
-#         user_id=data['user_id']
-#     )
-#     db.session.add(new_message)
-#     db.session.commit()
-
-#     # Fetch user information
-#     user = User.query.get(data['user_id'])
-
-#     # Broadcast the new message with user information to all connected clients
-#     socketio.emit('new_message', {'message_content': data['message_content'], 'user': user.to_dict()})
-
-# @socketio.on('new_message')
-# def handle_new_message(data):
-#     print('New message:', data)
-
-#     # Save the new message to the database
-#     new_message = Message(
-#         message_content=data['message_content'],
-#         chatroom_id=data['chatroom_id'],
-#         user_id=data['user_id']
-#     )
-#     db.session.add(new_message)
-#     db.session.commit()
-
-#     # Fetch user information
-#     user = User.query.get(data['user_id'])
-
-#     if user:
-#         # Broadcast the new message with user information to all connected clients
-#         socketio.emit('new_message', {'message_content': data['message_content'], 'user': user.to_dict()})
 
 @socketio.on('new_message')
 def handle_new_message(data):
